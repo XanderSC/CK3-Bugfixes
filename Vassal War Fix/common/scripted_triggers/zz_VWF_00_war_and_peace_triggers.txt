@@ -1,0 +1,33 @@
+﻿
+### VWF REPLACEMENT WAR TRIGGER LIST
+
+war_declarer_needs_hook_on_liege = {
+	scope:actor = {
+		trigger_if = {
+			limit = {
+				is_independent_ruler = no
+				top_liege = scope:recipient.top_liege
+				NOT = { top_liege = scope:recipient }
+				top_liege = { has_realm_law_flag = vassal_internal_wars_banned }
+				NOT = {
+					vassal_contract_has_flag = vassal_contract_war_override
+				}
+			}
+			always = yes
+		}
+		trigger_else_if = {
+			limit = {
+				is_independent_ruler = no
+				NOT = { top_liege = scope:recipient }
+				top_liege = { has_realm_law_flag = vassal_all_wars_banned }
+				NOT = {
+					vassal_contract_has_flag = vassal_contract_war_override
+				}
+			}
+			always = yes
+		}
+		trigger_else = {
+			always = no
+		}
+	}
+}

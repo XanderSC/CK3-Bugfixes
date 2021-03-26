@@ -3,5 +3,5 @@ tags={
 	"Fixes"
 }
 picture="thumbnail.png"
-name="TFT-FMP Compatch"
+name="Vassal War Fix"
 supported_version="1.*"
